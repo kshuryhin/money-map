@@ -1,4 +1,11 @@
 spring:
   application:
     name: api
-
+  datasource:
+    url: jdbc:postgresql://localhost:5432/money-map
+    username: postgres
+    password: example
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 3
