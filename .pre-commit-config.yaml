@@ -1,0 +1,15 @@
+repos:
+    - repo: local
+      hooks:
+          - id: checkstyle
+            name: Ensure Java style
+            description: Prevents developers from committing Java files with incorrect styling.
+            entry: ./scripts/checkstyle.sh
+            language: script
+            files: ''
+    - repo: https://github.com/pre-commit/pre-commit-hooks.git
+      rev: main
+      hooks:
+        - id: trailing-whitespace
+          exclude: (\.snap$|\.md$)
+        - id: detect-private-key

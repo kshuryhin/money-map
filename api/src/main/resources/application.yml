@@ -1,4 +1,12 @@
 spring:
+  flyway:
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    enabled: true
+    baseline-on-migrate: true
+    table: _schema_version
+    connect-retries: 10
+    out-of-order: true
   application:
     name: api
   datasource:
